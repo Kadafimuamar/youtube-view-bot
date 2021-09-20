@@ -28,7 +28,7 @@ class getInfo():
 
     def getVideo(self):
         def asking(self):
-            self.videoId = input('Youtube vidéo ID => ')
+            self.videoId = input('UCy6q8LY6LP1u2j0kGPkYkcg')
             if len(self.videoId) != 11:
                 asking(self)
                 print(f"{colorama.Fore.RED} Vidéo ID is invalid...")
@@ -39,7 +39,7 @@ class getInfo():
     def getWindows(self):
         def asking(self):
             try:
-                self.WindowsMax = int(input('How many windows do you want (max = 10) -> '))
+                self.WindowsMax = int(input(10))
                 if self.WindowsMax > 10:
                     print(f"{colorama.Fore.RED} 10 max !")
                     asking(self)
@@ -52,7 +52,7 @@ class getInfo():
     def watchTime(self):
         def asking(self):
             try:
-                self.watchtime = int(input('How many watch time do you want (seconds) -> '))
+                self.watchtime = int(input(300))
             except ValueError:
                 print(f"{colorama.Fore.RED} a number is required !")
                 asking(self)
@@ -65,11 +65,11 @@ def makeView(proxy,i,id,watchTime):
     chrome_options.add_argument('--proxy-server=%s' % proxy)
     driver = webdriver.Chrome(executable_path=r'chromedriver.exe', options=chrome_options)
     try:
-        driver.get(f'https://youtu.be/{id}')
+        driver.get(f'https://youtu.be/{UCy6q8LY6LP1u2j0kGPkYkcg}')
         if driver.title == "youtu.be":
             driver.close()
             return
-        elif driver.title == f"https://www.youtube.com/watch?v={id}&feature=youtu.be":
+        elif driver.title == f"https://www.youtube.com/watch?v={UCy6q8LY6LP1u2j0kGPkYkcg}&feature=youtu.be":
             driver.close()
             return 
         elif 'YouTube' in driver.title:
